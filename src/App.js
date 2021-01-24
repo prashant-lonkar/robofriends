@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import SearchHero from "./components/SearchHero";
+import CardContainer from "./components/CardContainer";
+import allHeroes from "./heroes";
 
-function App() {
+const App = () => {
+  const [heroes] = useState(allHeroes);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const onSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  const filteredHeroes = heroes.filter((hero) =>
+    hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="superhero hvr-underline-from-center">Superheroes</h1>
+      <SearchHero searchTermChange={onSearchTermChange} />
+      <CardContainer filteredHeroes={filteredHeroes} />
     </div>
   );
-}
+};
 
 export default App;
