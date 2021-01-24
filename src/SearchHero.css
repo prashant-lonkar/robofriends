@@ -1,6 +1,13 @@
-input {
-    display: block;
-    width: 200px;
-    margin: 0 auto 10px;
-    padding: 10px;
+.searchbar {
+  display: block;
+  width: 400px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  outline-color: lightblue;
+}
+
+@media (max-width: 576px) {
+  .searchbar {
+    width: 85%;
+  }
 }
