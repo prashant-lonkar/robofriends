@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import "./App.css";
-import SearchHero from "./components/SearchHero";
+import SearchFriend from "./components/SearchFriend";
 import CardContainer from "./components/CardContainer";
-import allHeroes from "./heroes";
+import AllFriends from "./friends";
 
 const App = () => {
-  const [heroes] = useState(allHeroes);
+  const [friends] = useState(AllFriends);
   const [searchTerm, setSearchTerm] = useState("");
 
   const onSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  const filteredHeroes = heroes.filter((hero) =>
-    hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredFriends = friends.filter((friend) =>
+    friend.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
     <div>
-      <h1 className="superhero hvr-underline-from-center">Superheroes</h1>
-      <SearchHero searchTermChange={onSearchTermChange} />
-      <CardContainer filteredHeroes={filteredHeroes} />
+      <h1 className="friends hvr-underline-from-center">Robofriends</h1>
+      <SearchFriend searchTermChange={onSearchTermChange} />
+      <CardContainer filteredFriends={filteredFriends} />
     </div>
   );
 };

@@ -2,14 +2,14 @@ import React from "react";
 import Card from "./Card";
 import "../App.css";
 
-const CardContainer = ({ filteredHeroes }) => {
+const CardContainer = ({ filteredFriends }) => {
   return (
     <div className="card-container">
-      {filteredHeroes.length === 0 ? (
-        <p className="no-data">No hero to display</p>
+      {filteredFriends.length === 0 ? (
+        <p className="no-data">No friend to display</p>
       ) : (
-        filteredHeroes.map((hero) => (
-          <Card key={hero.id} name={hero.name} info={hero.info} />
+        filteredFriends.map((friend) => (
+          <Card key={friend.id} name={friend.name} info={friend.info} />
         ))
       )}
     </div>
