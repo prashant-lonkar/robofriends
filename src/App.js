@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchFriend from "./components/SearchFriend";
 import CardContainer from "./components/CardContainer";
-import AllFriends from "./friends";
 
 const App = () => {
-  const [friends] = useState(AllFriends);
+  const [friends, setFriends] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const onSearchTermChange = (event) => {
@@ -14,6 +13,9 @@ const App = () => {
   const filteredFriends = friends.filter((friend) =>
     friend.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => response.json())
+    .then((user) => setFriends(user));
   return (
     <div>
       <h1 className="friends hvr-underline-from-center">Robofriends</h1>

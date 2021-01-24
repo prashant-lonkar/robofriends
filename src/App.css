@@ -31,12 +31,12 @@ body {
   height: 220px;
 }
 
-.title {
+.name {
   font-size: 1em;
   margin: 0;
 }
 
-.info {
+.username {
   font-size: 0.8em;
   margin: 5px 0;
 }

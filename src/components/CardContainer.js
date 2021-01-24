@@ -9,7 +9,7 @@ const CardContainer = ({ filteredFriends }) => {
         <p className="no-data">No friend to display</p>
       ) : (
         filteredFriends.map((friend) => (
-          <Card key={friend.id} name={friend.name} info={friend.info} />
+          <Card key={friend.id} name={friend.name} username={friend.username} />
         ))
       )}
     </div>
