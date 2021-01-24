@@ -12,6 +12,10 @@ body {
   padding: 10px 0;
 }
 
+.no-data {
+  color: lightslategray;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -21,24 +25,19 @@ body {
 .card {
   background-color: lightblue;
   margin: 10px;
-  padding: 15px;
+  padding: 5px;
   border-radius: 5px;
-  max-width: 200px;
-  min-width: 200px;
+  width: 200px;
 }
 
-@media (max-width: 576px) {
-  .card {
-    width: 50%;
-    margin: 5px;
-  }
+.title {
+  font-size: 1em;
+  margin: 0;
 }
 
-@media (max-width: 420px) {
-  .card {
-    width: 45%;
-    margin: 2px;
-  }
+.info {
+  font-size: 0.8em;
+  margin: 5px 0;
 }
 
 button {
@@ -46,8 +45,17 @@ button {
   padding: 5px 10px;
   outline: none;
   border-radius: 4px;
+  margin: 5px 0;
 }
 
-.no-data {
-  color: lightslategray;
+img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 40%;
+    height: auto;
+  }
 }
