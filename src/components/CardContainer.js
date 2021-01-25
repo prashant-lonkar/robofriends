@@ -1,15 +1,15 @@
 import React from "react";
 import Card from "./Card";
-import "../App.css";
 
 const CardContainer = ({ filteredFriends }) => {
   return (
     <div className="card-container">
-      {filteredFriends.length === 0 ? (
+      {!filteredFriends.length ? (
         <p className="no-data">No friend to display</p>
       ) : (
-        filteredFriends.map((friend) => (
-          <Card key={friend.id} name={friend.name} username={friend.username} />
+          // destructuring each element in filteredFriends
+        filteredFriends.map(({id, name, username}) => (
+          <Card key={id} name={name} username={username} />
         ))
       )}
     </div>

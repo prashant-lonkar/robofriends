@@ -1,5 +1,4 @@
 import React from "react";
-import "../SearchFriend.css";
 
 const SearchFriend = ({ searchTermChange }) => (
   <input

@@ -12,6 +12,20 @@ body {
   padding: 10px 0;
 }
 
+.searchbar {
+  display: block;
+  width: 400px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  outline-color: lightblue;
+}
+
+@media (max-width: 576px) {
+  .searchbar {
+    width: 85%;
+  }
+}
+
 .no-data {
   color: lightslategray;
 }

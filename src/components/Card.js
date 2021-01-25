@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import "hover.css/css/hover.css";
 
 const Card = ({ name, username }) => {
