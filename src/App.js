@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchFriend from "./components/SearchFriend";
 import CardContainer from "./components/CardContainer";
+import Scroll from "./components/Scroll";
 
 const App = () => {
   const [friends, setFriends] = useState([]);
@@ -20,7 +21,9 @@ const App = () => {
     <div>
       <h1 className="friends hvr-underline-from-center">Robofriends</h1>
       <SearchFriend searchTermChange={onSearchTermChange} />
-      <CardContainer filteredFriends={filteredFriends} />
+      <Scroll>
+        <CardContainer filteredFriends={filteredFriends} />
+      </Scroll>
     </div>
   );
 };
